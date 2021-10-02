@@ -13,7 +13,7 @@ class _LocationState extends State<Location> {
       child: Container(
         child: Center(
           child: Text('Location Screen'),
-        )),
+        ),),
     ),
     );
   }
