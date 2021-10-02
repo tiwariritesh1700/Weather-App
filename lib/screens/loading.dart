@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:weather_app/worker/worker.dart';
 class Loading extends StatefulWidget {
   const Loading({Key? key}) : super(key: key);
@@ -25,13 +26,13 @@ class _LoadingState extends State<Loading> {
     air_speed = worked.air_speed;
     description = worked.description;
 
-    Navigator.pushReplacementNamed(context, "/home",arguments: {
-      "city":cityName,
-      "temp":temp,
-      "humidity":humidity,
-      "air_speed":air_speed,
-      "description":description,
-    });
+    // Navigator.pushReplacementNamed(context, "/home",arguments: {
+    //   "city":cityName,
+    //   "temp":temp,
+    //   "humidity":humidity,
+    //   "air_speed":air_speed,
+    //   "description":description,
+    // });
 
 
   }
@@ -39,15 +40,24 @@ class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            TextButton.icon(onPressed: (){
-              Navigator.pushNamed(context, "/home");
-            }, icon:Icon(Icons.add_to_home_screen) ,label: Text(temprature),)
+          Image.asset("images/mlogo.png",height: 240,width: 240,),
+           Text('Mausam App',style: TextStyle(fontSize: 30,fontWeight: FontWeight.w500,color: Colors.white),),
+            SizedBox(height: 10,),
+            Text('Made By Ritesh',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w400,color: Colors.white)),
+            SizedBox(height: 30,),
+            SpinKitWave(
+              color: Colors.white,
+              size: 50.0,
+            )
+
           ],
         ),
       ),
+      backgroundColor: Colors.blue[300],
     );
   }
 
