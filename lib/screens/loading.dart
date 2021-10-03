@@ -26,13 +26,17 @@ class _LoadingState extends State<Loading> {
     air_speed = worked.air_speed;
     description = worked.description;
 
-    // Navigator.pushReplacementNamed(context, "/home",arguments: {
-    //   "city":cityName,
-    //   "temp":temp,
-    //   "humidity":humidity,
-    //   "air_speed":air_speed,
-    //   "description":description,
-    // });
+    Future.delayed(Duration(seconds: 2),(){
+      print("entred here ");
+        Navigator.pushReplacementNamed(context, "/home",arguments: {
+          "city":cityName,
+          "temp":temp,
+          "humidity":humidity,
+          "air_speed":air_speed,
+          "description":description,
+        });
+    });
+
 
 
   }

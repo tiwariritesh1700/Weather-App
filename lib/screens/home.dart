@@ -18,7 +18,12 @@ class _HomeState extends State<Home> {
     return Scaffold( body:SafeArea(
       child: Container(
         child: Center(
-          child: Text(homeValuee["description"]),
+          child: ElevatedButton(
+            onPressed: (){
+              showSearch(context: context, delegate: SearchBar());
+            },
+            child: Text('Open Search'),
+          ),
         ),
       ),
     ),);
@@ -30,4 +35,37 @@ class _HomeState extends State<Home> {
 
 
   }
+}
+
+
+class SearchBar extends SearchDelegate{
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(onPressed: (){
+
+      }, icon:Icon(Icons.search))
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+   return IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back));
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+   return Container(
+     decoration: BoxDecoration(
+       color: Colors.red,
+       borderRadius: BorderRadius.circular(10),
+     ),
+   );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+   return Text(query);
+  }
+
 }
