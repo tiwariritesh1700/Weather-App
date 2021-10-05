@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:new_gradient_app_bar/new_gradient_app_bar.dart';
 import 'package:weather_app/worker/worker.dart';
 
 class Home extends StatefulWidget {
@@ -34,10 +35,21 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(0),
-        child: AppBar(
-          backgroundColor: Colors.blue,
+        child: NewGradientAppBar(
+          gradient:LinearGradient(
+            colors: [Colors.blue,Colors.blue.shade200
+            ],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
         ),
       ),
+      // appBar: PreferredSize(
+      //   preferredSize: Size.fromHeight(0),
+      //   child: AppBar(
+      //     backgroundColor: Colors.blue,
+      //   ),
+      // ),
       body: SafeArea(
         child: Container(
           decoration: BoxDecoration(
