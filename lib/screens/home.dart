@@ -32,6 +32,12 @@ class _HomeState extends State<Home> {
     var city = city_name[random.nextInt(city_name.length)];
 
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(0),
+        child: AppBar(
+          backgroundColor: Colors.blue,
+        ),
+      ),
       body: SafeArea(
         child: Container(
           decoration: BoxDecoration(
@@ -69,13 +75,14 @@ class _HomeState extends State<Home> {
                   ],
                 ),
               ),
-
               Row(
                 children: [
                   Expanded(
                     child: Container(
                       padding: EdgeInsets.all(26),
-                      margin: EdgeInsets.symmetric(horizontal: 24,),
+                      margin: EdgeInsets.symmetric(
+                        horizontal: 24,
+                      ),
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.5),
                         borderRadius: BorderRadius.circular(14),
@@ -91,7 +98,8 @@ class _HomeState extends State<Home> {
                     child: Container(
                       height: 300,
                       padding: EdgeInsets.all(26),
-                      margin: EdgeInsets.symmetric(horizontal: 24,vertical: 10),
+                      margin:
+                          EdgeInsets.symmetric(horizontal: 24, vertical: 10),
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.5),
                         borderRadius: BorderRadius.circular(14),
@@ -106,9 +114,9 @@ class _HomeState extends State<Home> {
                 children: [
                   Expanded(
                     child: Container(
-height: 150,
+                      height: 150,
                       padding: EdgeInsets.all(26),
-                      margin: EdgeInsets.fromLTRB(20,0,10,0),
+                      margin: EdgeInsets.fromLTRB(20, 0, 10, 0),
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.5),
                         borderRadius: BorderRadius.circular(14),
@@ -118,9 +126,9 @@ height: 150,
                   ),
                   Expanded(
                     child: Container(
-height: 150,
+                      height: 150,
                       padding: EdgeInsets.all(26),
-                      margin: EdgeInsets.fromLTRB(10,0,20,0),
+                      margin: EdgeInsets.fromLTRB(10, 0, 20, 0),
                       decoration: BoxDecoration(
                         color: Colors.white.withOpacity(0.5),
                         borderRadius: BorderRadius.circular(14),
@@ -130,7 +138,6 @@ height: 150,
                   ),
                 ],
               ),
-
               Container(
                 padding: EdgeInsets.all(30),
                 child: Column(
@@ -205,13 +212,11 @@ height: 150,
 
   SweepGradient sweepGradient() {
     return SweepGradient(
-
-      center: Alignment.centerRight,
+        center: Alignment.centerRight,
         colors: [Colors.red.shade800, Colors.redAccent.shade400]);
   }
 
-  RadialGradient radialGradient(){
-
-    return RadialGradient(colors: [Colors.redAccent,Colors.blue]);
+  RadialGradient radialGradient() {
+    return RadialGradient(colors: [Colors.redAccent, Colors.blue]);
   }
 }
